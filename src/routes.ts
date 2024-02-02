@@ -1,26 +1,19 @@
 import { Router } from "express"
-import { bankQueueController } from "./BankQueue"
+import { addClientController, getAllClientsController, getFirtsClientController } 
+from "./BankQueue"
 
 const router = Router()
 
-router.get("/", (req, res) => {
-    bankQueueController.getListClientsAtFila(req, res)
+router.get("/", async (req, res) => {
+    getAllClientsController.handle(req, res)
 })
 
-router.post("/addClientVip", (req, res) => {
-    bankQueueController.addClientVip(req, res)
+router.get("/getFirstClient", (req, res) => {
+    getFirtsClientController.handle(req, res)
 })
 
-router.post("/addClientNormal", (req, res) => {
-    bankQueueController.addClientNormal(req, res)
-})
-
-router.post("/addClientElderly", (req, res) => {
-    bankQueueController.addClientElderly(req, res)
-})
-
-router.get("/getClientFila", (req, res) => {
-    bankQueueController.getClientFila(req, res)
+router.post("/addClient", (req, res) => {
+    addClientController.handle(req, res)
 })
 
 export default router
