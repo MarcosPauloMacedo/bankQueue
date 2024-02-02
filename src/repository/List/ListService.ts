@@ -1,8 +1,8 @@
+import IBankQueueRepository from "../IBankQueueRepository"
 import ListAbstract from "./ListAbstract"
-import IBankQueue from "../IBankQueue"
-import { BankQueue } from "../../BankQueue"
+import BankQueue from "../../entity/BankQueue"
 
-export default class ListService extends ListAbstract implements IBankQueue{
+class ListService extends ListAbstract implements IBankQueueRepository{
     
     private list: BankQueue[] = []
     private firstElement = 1
@@ -19,7 +19,7 @@ export default class ListService extends ListAbstract implements IBankQueue{
         this.updatePriorityIndex()
     }
 
-    async removeFirstList(): Promise<String> {   
+    async removeFirstList(): Promise<string> {   
         this.identifyIsEmpityList()
         this.findFirstElementInList()
         
@@ -30,15 +30,15 @@ export default class ListService extends ListAbstract implements IBankQueue{
         return firstElement.getCode()
     }
 
-    async getAllList(): Promise<String[]> {
+    async getAllList(): Promise<string[]> {
         this.identifyIsEmpityList()
 
-        let arr = []
+        const arr = []
 
         for(let i = this.firstElement; i < this.currentIndex; i++){
             if(this.list[i] != undefined) arr.push(this.list[i].getCode())
         }
-
+        
         return arr
     }
 
@@ -64,3 +64,5 @@ export default class ListService extends ListAbstract implements IBankQueue{
         if(this.isEmpityList()) throw new Error("Não há clientes na fila")
     }
 }
+
+export default new ListService()

@@ -1,10 +1,6 @@
-import BankQueue from "./BankQueue"
-import ListService from "../repository/List/ListService"
-import BankQueueService from "./BankQueueService"
-import BankQueueController from "./BankQueueController"
+import { addClientController, addClientService } from "./AddClient"
+import { getFirtsClientController, getFirstClientService } from "./GetFirstClient"
+import { getAllClientsController, getAllClientsService } from "./GetAllClient"
 
-const listService = new ListService()
-const bankQueueService = new BankQueueService(listService)
-const bankQueueController = new BankQueueController(bankQueueService)
-
-export { bankQueueController, BankQueue }
+export { addClientController, getFirtsClientController, getAllClientsController }
+export { addClientService, getFirstClientService, getAllClientsService }
