@@ -2,7 +2,7 @@ import IBankQueueRepository from "../IBankQueueRepository"
 import ListAbstract from "./ListAbstract"
 import BankQueue from "../../entity/BankQueue"
 
-class ListService extends ListAbstract implements IBankQueueRepository{
+class ListRepository extends ListAbstract implements IBankQueueRepository{
     
     private list: BankQueue[] = []
     private firstElement = 1
@@ -65,4 +65,4 @@ class ListService extends ListAbstract implements IBankQueueRepository{
     }
 }
 
-export default new ListService()
+export default new ListRepository()
