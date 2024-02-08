@@ -2,6 +2,7 @@ import { expect, test } from 'vitest'
 import BankQueue from '../../../entity/BankQueue'
 
 test('BankQueue', async () => {
+    const senha = "001"
     const bankQueue = new BankQueue(false, "001")
     
     expect(bankQueue).toBeInstanceOf(BankQueue)

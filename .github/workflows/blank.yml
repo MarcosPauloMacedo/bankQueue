@@ -28,7 +28,12 @@ jobs:
           node-version: 20.
 
       # run install and test
-      - name: run install, test
+      - name: run install, test unit
         run: |
           npm install
           npm run test
+      
+      # run code test 
+      - name: run code test
+        run: |
+          npm run code 
