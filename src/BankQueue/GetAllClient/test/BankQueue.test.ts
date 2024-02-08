@@ -3,7 +3,6 @@ import BankQueue from '../../../entity/BankQueue'
 
 test('BankQueue', async () => {
     const code = "001"
-    const codes = "001"
     const bankQueue = new BankQueue(false, code)
     
     expect(bankQueue).toBeInstanceOf(BankQueue)
