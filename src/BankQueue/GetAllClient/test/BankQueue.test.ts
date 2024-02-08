@@ -2,10 +2,9 @@ import { expect, test } from 'vitest'
 import BankQueue from '../../../entity/BankQueue'
 
 test('BankQueue', async () => {
-    const code = "001
-    const bankQueue = new BankQueue(false, code)
+    const bankQueue = new BankQueue(false, "001")
     
     expect(bankQueue).toBeInstanceOf(BankQueue)
-    expect(bankQueue.getCode()).toEqual(code)
+    expect(bankQueue.getCode()).toEqual("001")
     expect(bankQueue.getPriorityClient()).toEqual(false)
 })
