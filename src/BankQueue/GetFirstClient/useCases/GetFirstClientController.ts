@@ -10,7 +10,7 @@ export default class GetFirtsClientController{
             return res.status(200).json(client)
         } catch (error) {
             return res.status(400).json({
-                message: error || 'Unexpected error.'
+                message: error 
             })
         }
     }
